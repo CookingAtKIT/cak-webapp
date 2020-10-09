@@ -1,0 +1,7 @@
+{
+  "name": "Cooking@KIT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
