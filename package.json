@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lab": "ionic serve --lab"
+    "lab": "ionic serve --lab",
+    "test-ios": "ionic capacitor run ios -l --external"
   },
   "private": true,
   "dependencies": {
