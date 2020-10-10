@@ -1,11 +1,12 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" *ngIf="userdata.loggedIn">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-img src="assets/img/KITchen.png"></ion-img>
-
-          <ion-note>uxxxx@student.kit.edu</ion-note>
+          <br>
+          <ion-img src="assets/img/Color.svg"></ion-img>
+          <br>
+          <ion-note *ngIf="userdata.loggedIn">uxxxx@student.kit.edu</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
