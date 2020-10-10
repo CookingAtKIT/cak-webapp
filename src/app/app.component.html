@@ -6,7 +6,8 @@
           <br>
           <ion-img id="kitchen_logo" [src]="util.darkModeEnabled ? 'assets/img/KITchen.svg' : 'assets/img/Color.svg'"></ion-img>
           <br>
-          <ion-note *ngIf="userdata.loggedIn">uxxxx@student.kit.edu</ion-note>
+          <ion-note *ngIf="userdata.loggedIn" [innerHTML]="userdata.user.getLevel() === 0 ?
+            'Guest-View. <a href>Log in</a>' : userdata.user.getAuthMailUser() + '@student.kit.edu'"></ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
