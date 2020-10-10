@@ -1,9 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" *ngIf="user.loggedIn">
   <ion-toolbar>
-    <ion-buttons slot="start" *ngIf="user.loggedIn">
+    <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <br>
     <ion-title>Cooking@KIT</ion-title>
+    <br>
   </ion-toolbar>
 </ion-header>
 

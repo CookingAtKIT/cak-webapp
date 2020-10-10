@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {UtilService} from '../../services/util.service';
 
 @Component({
   selector: 'app-auth',
@@ -8,7 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AuthPage implements OnInit {
   @Input() preview: boolean;
 
-  constructor() { }
+  constructor(public util: UtilService) { }
 
   ngOnInit() {
   }
