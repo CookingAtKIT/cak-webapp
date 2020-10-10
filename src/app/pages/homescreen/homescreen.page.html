@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="user.loggedIn">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cooking@KIT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-auth [preview]="true" *ngIf="!user.loggedIn"></app-auth>
+  <div id="home_content" *ngIf="user.loggedIn">
+    Content für eingeloggte User #cool
+  </div>
+</ion-content>
