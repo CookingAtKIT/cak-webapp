@@ -18,6 +18,14 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+    path: 'explore',
+    loadChildren: () => import('./pages/explore/explore.module').then( m => m.ExplorePageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];
 
@@ -27,4 +35,6 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
+// @ts-ignore
 export class AppRoutingModule {}

@@ -13,5 +13,6 @@
   <app-auth [preview]="true" *ngIf="!user.loggedIn"></app-auth>
   <div id="home_content" *ngIf="user.loggedIn">
     Content für eingeloggte User #cool
+    <ion-button routerLink="explore">Test-Seite</ion-button>
   </div>
 </ion-content>

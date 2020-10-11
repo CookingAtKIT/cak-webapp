@@ -20,9 +20,9 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Selectable2',
-      url: '/folder/Selectable2',
-      icon: 'paper-plane'
+      title: 'Explore',
+      url: 'explore',
+      icon: 'rocket'
     },
     {
       title: 'Selectable3',
