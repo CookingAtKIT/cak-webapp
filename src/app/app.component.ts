@@ -25,24 +25,19 @@ export class AppComponent implements OnInit {
       icon: 'rocket'
     },
     {
-      title: 'Selectable3',
-      url: '/folder/Selectable3',
-      icon: 'heart'
+      title: 'Search',
+      url: 'search',
+      icon: 'search'
     },
     {
-      title: 'Selectable4',
-      url: '/folder/Selectable4',
-      icon: 'archive'
+      title: 'Create',
+      url: 'create',
+      icon: 'newspaper'
     },
     {
-      title: 'Selectable5',
-      url: '/folder/Selectable5',
-      icon: 'trash'
-    },
-    {
-      title: 'Selectable6',
-      url: '/folder/Selectable6',
-      icon: 'warning'
+      title: 'Profile',
+      url: 'profile',
+      icon: 'person-circle'
     }
   ];
 
