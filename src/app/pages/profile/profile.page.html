@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <br>
+    <ion-title>Profile</ion-title>
+    <br>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-item id="profile">
+    <ion-img id="profile_pic" src="assets/img/user.svg"></ion-img>
+    <ion-title id="userAuthName">{{ userdata.user.getAuthMailUser() }}</ion-title>
+    <ion-icon id="logoutButton" name="log-out-outline" color="danger"></ion-icon>
+  </ion-item>
 </ion-content>
