@@ -15,8 +15,9 @@ export class UserdataService {
     this.loggedIn = true;
   }
 
-  logoutGuest(): void {
+  logout(): void {
     this.user = null;
     this.loggedIn = false;
+    document.location.href = "";
   }
 }
