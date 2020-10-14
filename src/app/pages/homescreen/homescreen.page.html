@@ -12,7 +12,58 @@
 <ion-content>
   <app-auth [preview]="true" *ngIf="!user.loggedIn"></app-auth>
   <div id="home_content" *ngIf="user.loggedIn">
-    Content für eingeloggte User #cool
-    <ion-button routerLink="explore">Test-Seite</ion-button>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Hi, {{ user.user.getAuthMailUser() }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text>
+          Willkommen zurück! Während du weg warst haben wir das hier für dich rausgesucht.
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list>
+      <ion-list-header>Für dich</ion-list-header>
+
+      <ion-item class="ion-no-padding">
+        <ion-card routerLink="/recipe">
+          <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
+            <ion-card-title>Pizza Neapolitana</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Pizza nach traditionell Neappolitanischer Art
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-item class="ion-no-padding">
+        <ion-card routerLink="/recipe">
+          <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
+            <ion-card-title>Pizza Neapolitana</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Pizza nach traditionell Neappolitanischer Art
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-item class="ion-no-padding">
+        <ion-card routerLink="/recipe">
+          <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
+            <ion-card-title>Pizza Neapolitana</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Pizza nach traditionell Neappolitanischer Art
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>

@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {UserdataService} from './services/userdata.service';
-import {UtilService} from './services/util.service';
+import { UserdataService } from './services/userdata.service';
+import { UtilService } from './services/util.service';
 
 @Component({
   selector: 'app-root',
@@ -15,27 +15,27 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Home',
+      title: 'Start',
       url: 'homescreen',
       icon: 'home'
     },
     {
-      title: 'Explore',
+      title: 'Entdecken',
       url: 'explore',
       icon: 'rocket'
     },
     {
-      title: 'Search',
+      title: 'Suchen',
       url: 'search',
       icon: 'search'
     },
     {
-      title: 'Create',
+      title: 'Erstellen',
       url: 'create',
       icon: 'newspaper'
     },
     {
-      title: 'Profile',
+      title: 'Profil',
       url: 'profile',
       icon: 'person-circle'
     }

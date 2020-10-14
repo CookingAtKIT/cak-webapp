@@ -1,9 +1,14 @@
 <ion-content>
   <div id="login_content">
     <ion-img id="kitchen_logo" [src]="util.darkModeEnabled ? 'assets/img/KITchen.svg' : 'assets/img/Color.svg'"></ion-img>
-    <p id="subtitle">A KIT community project</p>
-    <ion-button>Login with KIT</ion-button>
-    <p>or</p>
-    <ion-button color="medium" (click)="userdata.loginGuest()">Go as guest</ion-button>
+    <br/>
+    <div id="auth_buttons" style="padding: 10%">
+      <ion-button style="width: 100%">Anmelden</ion-button>
+      <br/>
+      <ion-button style="width: 100%">Registrieren</ion-button>
+      <br/>
+      <br/>
+      <ion-button style="width: 100%" color="medium" (click)="userdata.loginGuest()">Gastzugang</ion-button>
+    </div>
   </div>
 </ion-content>

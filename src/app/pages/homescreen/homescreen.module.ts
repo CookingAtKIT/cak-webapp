@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomescreenPageRoutingModule } from './homescreen-routing.module';
 
 import { HomescreenPage } from './homescreen.page';
-import {AuthPageModule} from '../auth/auth.module';
+import { AuthPageModule } from '../auth/auth.module';
 
 @NgModule({
     imports: [
