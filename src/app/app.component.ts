@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {UserdataService} from './services/userdata.service';
-import {UtilService} from './services/util.service';
+import { UserdataService } from './services/userdata.service';
+import { UtilService } from './services/util.service';
 
 @Component({
   selector: 'app-root',
@@ -15,34 +15,29 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Home',
+      title: 'Start',
       url: 'homescreen',
       icon: 'home'
     },
     {
-      title: 'Selectable2',
-      url: '/folder/Selectable2',
-      icon: 'paper-plane'
+      title: 'Entdecken',
+      url: 'explore',
+      icon: 'rocket'
     },
     {
-      title: 'Selectable3',
-      url: '/folder/Selectable3',
-      icon: 'heart'
+      title: 'Suchen',
+      url: 'search',
+      icon: 'search'
     },
     {
-      title: 'Selectable4',
-      url: '/folder/Selectable4',
-      icon: 'archive'
+      title: 'Erstellen',
+      url: 'create',
+      icon: 'newspaper'
     },
     {
-      title: 'Selectable5',
-      url: '/folder/Selectable5',
-      icon: 'trash'
-    },
-    {
-      title: 'Selectable6',
-      url: '/folder/Selectable6',
-      icon: 'warning'
+      title: 'Profil',
+      url: 'profile',
+      icon: 'person-circle'
     }
   ];
 

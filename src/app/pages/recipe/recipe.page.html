@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <!-- TODO: Replace true and false values with wether the user has starred the recipe -->
+        <ion-icon *ngIf="user.loggedIn && true" slot="icon-only" ios="star-outline" md="star-outline"></ion-icon>
+        <ion-icon *ngIf="user.loggedIn && false" slot="icon-only" ios="star" md="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Rezept</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg"></ion-img>
+  <ion-list>
+    <div class="ion-padding">
+      <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
+      <ion-card-title>Pizza Neapolitana</ion-card-title>
+    </div>
+
+    <!--TODO: Add steps: optional image, title and description itself in listed order -->
+  </ion-list>
+</ion-content>

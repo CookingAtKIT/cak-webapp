@@ -8,16 +8,32 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'homescreen',
     loadChildren: () => import('./pages/homescreen/homescreen.module').then( m => m.HomescreenPageModule)
   },
   {
     path: 'auth',
     loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+    path: 'explore',
+    loadChildren: () => import('./pages/explore/explore.module').then( m => m.ExplorePageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'recipe',
+    loadChildren: () => import('./pages/recipe/recipe.module').then( m => m.RecipePageModule)
   }
 ];
 
@@ -27,4 +43,6 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
+// @ts-ignore
 export class AppRoutingModule {}

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <br>
+    <ion-title>Profil</ion-title>
+    <br>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-img id="profile_pic" src="assets/img/user.svg"></ion-img>
+      <ion-label>{{ userdata.user.getAuthMailUser() }}</ion-label>
+      <ion-icon id="logoutButton" name="log-out-outline" color="danger" (click)="userdata.logout()"></ion-icon>
+    </ion-item>
+    <ion-item class="pointer">
+      <ion-icon name="list-outline" class="ion-padding"></ion-icon>
+      <ion-label>Meine Rezepte</ion-label>
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item class="pointer">
+      <ion-icon name="star-outline" class="ion-padding"></ion-icon>
+      <ion-label>Meine Favoriten</ion-label>
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
