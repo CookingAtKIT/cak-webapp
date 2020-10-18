@@ -12,58 +12,31 @@
 <ion-content>
   <app-auth [preview]="true" *ngIf="!user.loggedIn"></app-auth>
   <div id="home_content" *ngIf="user.loggedIn">
-    <ion-card>
+    <!--<ion-card color="dark">
       <ion-card-header>
         <ion-card-title>Hi, {{ user.user.getAuthMailUser() }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-text>
-          Willkommen zurück! Während du weg warst haben wir das hier für dich rausgesucht.
+          Willkommen zurück! Während du weg warst haben wir das hier für dich rausgesucht:
         </ion-text>
       </ion-card-content>
+    </ion-card>-->
+
+    <ion-card routerLink="/recipe/fnjdsgjn4857z39474">
+      <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>Empfehlung des Tages</ion-card-subtitle>
+        <ion-card-title>Pizza Neapolitana</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Pizza nach traditionell Neapolitanischer Art
+        <br>
+        <ion-chip *ngFor="let chip of user.createInfoChips(recipeOfTheDay)" color="{{chip.color}}">
+          <ion-icon *ngIf="chip.icon !== ''" name="{{chip.icon}}"></ion-icon>
+          <ion-label>{{chip.name}}</ion-label>
+        </ion-chip>
+      </ion-card-content>
     </ion-card>
-
-    <ion-list>
-      <ion-list-header>Für dich</ion-list-header>
-
-      <ion-item class="ion-no-padding">
-        <ion-card routerLink="/recipe">
-          <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
-            <ion-card-title>Pizza Neapolitana</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Pizza nach traditionell Neapolitanischer Art
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
-
-      <ion-item class="ion-no-padding">
-        <ion-card routerLink="/recipe">
-          <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
-            <ion-card-title>Pizza Neapolitana</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Pizza nach traditionell Neapolitanischer Art
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
-
-      <ion-item class="ion-no-padding">
-        <ion-card routerLink="/recipe">
-          <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
-            <ion-card-title>Pizza Neapolitana</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Pizza nach traditionell Neapolitanischer Art
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
-    </ion-list>
   </div>
 </ion-content>

@@ -12,19 +12,49 @@
 <ion-content>
   <ion-list>
     <ion-item>
-      <ion-img id="profile_pic" src="assets/img/user.svg"></ion-img>
+      <ion-img id="profile_pic" src="assets/img/profile.svg"></ion-img>
       <ion-label>{{ userdata.user.getAuthMailUser() }}</ion-label>
-      <ion-icon id="logoutButton" name="log-out-outline" color="danger" (click)="userdata.logout()"></ion-icon>
     </ion-item>
-    <ion-item class="pointer">
+    <!--<ion-item class="pointer">
       <ion-icon name="list-outline" class="ion-padding"></ion-icon>
       <ion-label>Meine Rezepte</ion-label>
-      <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-item>
     <ion-item class="pointer">
       <ion-icon name="star-outline" class="ion-padding"></ion-icon>
       <ion-label>Meine Favoriten</ion-label>
-      <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-item>
+    <ion-item class="pointer" routerLink="../allergies">
+      <ion-icon name="file-tray-full-outline" class="ion-padding"></ion-icon>
+      <ion-label>Allergien, Eigenschaften</ion-label>
+    </ion-item>-->
   </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col id="accCol">
+        Account
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col id="favCol">
+        Favoriten
+      </ion-col>
+      <ion-col id="hisCol">
+        Verlauf
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col id="recCol">
+        Meine Rezepte
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col id="preCol" routerLink="../allergies">
+        Allergien, Präferenzen
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

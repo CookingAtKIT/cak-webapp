@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>allergies</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <br>
+    <ion-title>Eigenschaften</ion-title>
+    <br>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card color="medium">
+    <ion-card-header>
+      <ion-card-title>Wähle deine Präferenzen</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        Aufgrund deiner Auswahl werden dir entsprechende Rezepte angezeigt
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-list>
+    <ion-radio-group allow-empty-selection *ngFor="let preference of userdata.preferences" [(ngModel)]="preference.value">
+      <ion-item>
+        <ion-label>{{ preference.label }}</ion-label>
+        <ion-radio value="true"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
 </ion-content>

@@ -32,9 +32,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/create/create.module').then( m => m.CreatePageModule)
   },
   {
-    path: 'recipe',
+    path: 'recipe/:id',
     loadChildren: () => import('./pages/recipe/recipe.module').then( m => m.RecipePageModule)
+  },
+  {
+    path: 'allergies',
+    loadChildren: () => import('./pages/allergies/allergies.module').then( m => m.AllergiesPageModule)
   }
+
 ];
 
 @NgModule({

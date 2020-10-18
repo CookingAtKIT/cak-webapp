@@ -1,15 +1,53 @@
 #profile_pic {
   position: relative;
-  width: 3rem;
-  margin: 1.5rem 1rem;
+  padding: 1.5rem 0 1.5rem 0;
+  width: 4rem;
 }
 
-#logoutButton {
-  position: absolute;
-  right: 2rem;
-  cursor: pointer;
+#usernameLabel {
+
 }
 
 .pointer {
+  cursor: pointer;
+}
+
+#accCol {
+  background-color: var(--ion-color-primary);
+  color: white;
+}
+#accCol ion-icon {
+  float: right
+}
+
+#favCol {
+  text-align: center;
+  background-color: var(--ion-color-light);
+}
+
+#hisCol {
+  text-align: center;
+  background-color: var(--ion-color-light);
+}
+
+#recCol {
+  background-color: var(--ion-color-success);
+  color: white;
+}
+#recCol ion-icon {
+  float: right;
+}
+
+#preCol {
+  background-color: var(--ion-color-warning);
+}
+#preCol ion-icon {
+  float: right;
+}
+
+ion-col {
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
   cursor: pointer;
 }
