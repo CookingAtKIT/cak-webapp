@@ -10,7 +10,7 @@ export class Recipe {
         ingredient: {
             displayname:string,
             allgergene: string[],
-            unit: string[],
+            unit: string,
             kcal?: number,
             reweLink?: string
         },
