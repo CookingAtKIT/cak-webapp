@@ -6,5 +6,9 @@ import { Injectable } from '@angular/core';
 export class UtilService {
   public darkModeEnabled = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  constructor() { }
+  constructor() {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      this.darkModeEnabled = e.matches;
+    });
+  }
 }
