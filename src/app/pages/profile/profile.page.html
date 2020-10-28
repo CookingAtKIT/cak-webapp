@@ -10,11 +10,33 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/profile.svg">
+      </ion-avatar>
+      <h2 text-capitalize style="padding-left: .5rem">{{ userdata.user.getAuthMailUser() }}</h2>
+    </ion-item>
+    <ion-card-content>
+      <div *ngIf="userdata.user.getLevel() === 0">
+        Du bist im Moment nicht angemeldet. Bitte melde dich an, oder registriere dich mit deiner KIT-Mailadresse um auf alle Features zugreifen zu können.
+      </div>
+      <div *ngIf="userdata.user.getLevel() > 0">
+        Bacon ipsum dolor amet salami prosciutto ham hock, strip steak buffalo ribeye pork chop. Beef ribs tenderloin tail shoulder.
+        Spare ribs ham shoulder brisket rump hamburger. Pork belly kevin shoulder prosciutto ribeye pork chop chicken
+        strip steak pig.
+      </div>
+    </ion-card-content>
+  </ion-card>
+
   <ion-list>
+
+    <!--
     <ion-item>
       <ion-img id="profile_pic" src="assets/img/profile.svg"></ion-img>
       <ion-label>{{ userdata.user.getAuthMailUser() }}</ion-label>
     </ion-item>
+    -->
     <!--<ion-item class="pointer">
       <ion-icon name="list-outline" class="ion-padding"></ion-icon>
       <ion-label>Meine Rezepte</ion-label>
@@ -51,7 +73,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col id="preCol" routerLink="../allergies">
+      <ion-col id="preCol" [routerLink]="userdata.user.getLevel() > 0 ? './allergies' : 'nothing'">
         Allergien, Präferenzen
         <ion-icon name="arrow-forward-outline"></ion-icon>
       </ion-col>

@@ -16,11 +16,68 @@
 </ion-header>
 
 <ion-content>
-  <ion-img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg"></ion-img>
+  <ion-img class="top-image" src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg"></ion-img>
   <ion-list>
     <div class="ion-padding">
       <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
       <ion-card-title>Pizza Neapolitana</ion-card-title>
+
+      <p> <!-- recipe description -->
+        Pizza nach traditionell Neapolitanischer Art nach traditionell Neapolitanischer traditionell Neapolitanischer Pizza Pasta
+      </p>
+    </div>
+
+    <!-- needed ingredients -->
+    <h1 class="bold ion-padding-start">Zutaten</h1>
+
+    <!-- ingredients table -->
+    <ion-list>
+      <ion-item *ngFor="let item of recipe.ingredients">
+        <ion-label>{{ item.ingredient.displayname }}</ion-label>
+        <ion-note slot="end" color="primary">{{ item.amount }} {{ item.ingredient.unit }}</ion-note>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <h1 class="bold">Rezept</h1>
+    </div>
+
+    <ion-slides [options]="sliderConfig" class="ion-padding-vertical">
+      <ion-slide class="max-height" *ngFor="let step of recipe.steps">
+        <ion-card class="max-height">
+          <ion-img [src]="step.img" class="recipe-card-img"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{ step.index }}. {{ step.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ step.body }}
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <div class="ion-padding">
+      <h1 class="bold">Kommentare</h1>
+
+      <ion-row class="comment" *ngFor="let comment of recipe.comments">
+        <ion-col size="2">
+          <ion-avatar>
+            <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" alt="xxxxxxx">
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="10" class="comment-text">
+          <div class="comment-author">
+            {{ comment.author }}
+            <ion-icon class="ion-float-end" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          </div>
+          <p class="comment-body">
+            {{ comment.body }}
+          </p>
+
+          <ion-icon class="comment-like-button" name="thumbs-up-outline"></ion-icon>
+          <span>{{ comment.likes }}</span>
+        </ion-col>
+      </ion-row>
     </div>
 
     <!--TODO: Add steps: optional image, title and description itself in listed order -->

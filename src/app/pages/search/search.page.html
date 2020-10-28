@@ -1,29 +1,20 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <br>
     <ion-title>Suchen</ion-title>
-    <br>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-searchbar></ion-searchbar>
-    <ion-buttons slot="primary">
-      <ion-button>
-        <ion-icon name="filter"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<!--
 <ion-content>
   <ion-list>
     <ion-list-header>Suchergebnisse</ion-list-header>
 
     <ion-item class="ion-no-padding">
       <ion-card routerLink="/recipe">
-        <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
+        <ion-img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
         <ion-card-header>
           <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
           <ion-card-title>Pizza Neapolitana</ion-card-title>
@@ -36,7 +27,7 @@
 
     <ion-item class="ion-no-padding">
       <ion-card routerLink="/recipe">
-        <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" style="object-fit: cover" />
+        <ion-img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" class="card-img" />
         <ion-card-header>
           <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
           <ion-card-title>Pizza Neapolitana</ion-card-title>
@@ -49,7 +40,7 @@
 
     <ion-item class="ion-no-padding">
       <ion-card routerLink="/recipe">
-        <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
+        <ion-img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
         <ion-card-header>
           <ion-card-subtitle>Backofen und Pizzastein</ion-card-subtitle>
           <ion-card-title>Pizza Neapolitana</ion-card-title>
@@ -60,4 +51,54 @@
       </ion-card>
     </ion-item>
   </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let result of searchResults | async" col-12 col-xl-2 col-lg-3 col-md-4>
+        <ion-card routerLink="/recipe">
+          <ion-img [src]="result.imgsrc" [alt]="result.title"/>
+          <ion-card-header>
+            <ion-card-subtitle>{{ result.subtitle }}</ion-card-subtitle>
+            <ion-card-title>{{ result.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ result.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+-->
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Suchen</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar></ion-searchbar>
+      <ion-buttons slot="primary">
+        <ion-button>
+          <ion-icon name="filter" routerLink="/searchfilter"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-list-header>Suchergebnisse</ion-list-header>
+      <ion-col *ngFor="let res of searchResults" class="ion-no-padding" col-12 col-xl-2 col-lg-3 col-md-4>
+        <ion-card routerLink="/recipe/{{ res.id }}">
+          <ion-img [src]="res.imgsrc" class="card-img"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>{{ res.subtitle }}</ion-card-subtitle>
+            <ion-card-title>{{ res.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ res.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

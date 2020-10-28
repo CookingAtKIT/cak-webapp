@@ -24,3 +24,19 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+/*
+.card-img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}*/
+
+.ion-img {
+  max-height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bold {
+  font-weight: bold;
+}
