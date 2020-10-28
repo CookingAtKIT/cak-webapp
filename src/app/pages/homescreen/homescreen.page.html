@@ -11,8 +11,9 @@
 
 <ion-content>
   <app-auth [preview]="true" *ngIf="!user.loggedIn"></app-auth>
+  <!--
   <div id="home_content" *ngIf="user.loggedIn">
-    <!--<ion-card color="dark">
+    <ion-card color="dark">
       <ion-card-header>
         <ion-card-title>Hi, {{ user.user.getAuthMailUser() }}</ion-card-title>
       </ion-card-header>
@@ -21,10 +22,10 @@
           Willkommen zurück! Während du weg warst haben wir das hier für dich rausgesucht:
         </ion-text>
       </ion-card-content>
-    </ion-card>-->
+    </ion-card>
 
     <ion-card routerLink="/recipe/fnjdsgjn4857z39474">
-      <img src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
+      <img class="card-img" src="https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg" />
       <ion-card-header>
         <ion-card-subtitle>Empfehlung des Tages</ion-card-subtitle>
         <ion-card-title>Pizza Neapolitana</ion-card-title>
@@ -38,5 +39,23 @@
         </ion-chip>
       </ion-card-content>
     </ion-card>
-  </div>
+  </div>-->
+
+  <ion-grid *ngIf="user.loggedIn">
+    <ion-row>
+      <ion-list-header>Suchergebnisse</ion-list-header>
+      <ion-col *ngFor="let res of recommendedRecipes" class="ion-no-padding" size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="2">
+        <ion-card routerLink="/recipe/{{ res.id }}">
+          <ion-img [src]="res.imgsrc" class="card-img"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>{{ res.subtitle }}</ion-card-subtitle>
+            <ion-card-title>{{ res.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ res.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

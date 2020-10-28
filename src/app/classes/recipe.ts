@@ -29,7 +29,7 @@ export class Recipe {
         body: string,
         likes: number,
         images: string[]
-    };
+    }[];
 }
 
 export class RecipeEdit {

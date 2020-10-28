@@ -7,7 +7,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
-  constructor() { }
+  searchResults;
+
+  constructor() {
+    this.searchResults = [
+      {
+        id: "fnjdsgjn4857z39474",
+        title: "Pizza Neapolitana",
+        subtitle: "Backofen und Pizzastein",
+        imgsrc: "https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg",
+        description: "Pizza nach traditionell Neapolitanischer Art"
+      },
+      {
+        id: "fnjdsgjn4857z39474",
+        title: "Pizza Neapolitana",
+        subtitle: "Backofen und Pizzastein",
+        imgsrc: "https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg",
+        description: "Pizza nach traditionell Neapolitanischer Art"
+      },
+      {
+        id: "fnjdsgjn4857z39474",
+        title: "Pizza Neapolitana",
+        subtitle: "Backofen und Pizzastein",
+        imgsrc: "https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg",
+        description: "Pizza nach traditionell Neapolitanischer Art"
+      },
+      {
+        id: "fnjdsgjn4857z39474",
+        title: "Pizza Neapolitana",
+        subtitle: "Backofen und Pizzastein",
+        imgsrc: "https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg",
+        description: "Pizza nach traditionell Neapolitanischer Art"
+      }
+    ];
+  }
 
   ngOnInit() {
   }

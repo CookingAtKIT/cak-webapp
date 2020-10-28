@@ -32,7 +32,7 @@ export class UserdataService {
   constructor() {}
 
   loginGuest(): void {
-    this.user = new User("guest", 0);
+    this.user = new User("Gast-Benutzer", 0);
     this.loggedIn = true;
     // todo: get preferences
   }

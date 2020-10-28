@@ -1,0 +1,48 @@
+.top-image {
+  max-height: 40vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.max-height {
+  height: 100%;
+  bottom: 0;
+  top: 0;
+}
+
+.nav-button {
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, 0);
+}
+
+.recipe-card-img {
+  width: 100%;
+  min-height: 100px;
+  height: 30%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.comment {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comment-text {
+  display: block;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-body {
+  margin-top: .3rem;
+  margin-bottom: .5rem;
+}
+
+.comment-like-button {
+  padding: 0;
+  margin: 0 .5rem 0 0;
+}
