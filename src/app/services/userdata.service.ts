@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from '../classes/user';
+import {Recipe} from '../interfaces/recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -43,10 +44,10 @@ export class UserdataService {
     document.location.href = "";
   }
 
-  createInfoChips(recipe: {forPreferences: {id: string, allergy: boolean}[]}): {name: string, icon: string, color: string}[] {
+  createInfoChips(recipe: Recipe): {name: string, icon: string, color: string}[] {
     const infoChips = [];
     for (const preference of this.preferences) {
-      for (const ingredient of recipe.forPreferences) {
+      for (const ingredient of recipe.preferences) {
         if (preference.id === ingredient.id && preference.value === "true") {
           infoChips.push({
             name: preference.label,
