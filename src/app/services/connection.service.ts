@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class ConnectionService {
 
-  private static API_PATH = "https://";
+  private static API_PATH = "https://zjuliany.me";
   private token = "";
 
   constructor(private http: HttpClient) {

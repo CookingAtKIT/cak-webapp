@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserdataService } from '../../services/userdata.service';
 import { ActivatedRoute } from '@angular/router';
 import { Recipe } from '../../classes/recipe';
+import {ConnectionService} from '../../services/connection.service';
 
 @Component({
   selector: 'app-recipe',
@@ -12,12 +13,13 @@ export class RecipePage implements OnInit {
 
   recipe: Recipe;
 
-  constructor(public user: UserdataService, private route: ActivatedRoute) {
+  constructor(public user: UserdataService, private route: ActivatedRoute, private backend: ConnectionService) {
     this.recipe = {
       id: "_id",
       public: true,
       flags: 0,
       title: "Pizza Neapolitana",
+      description: "Pizza nach traditionell Neapolitanischer Art nach traditionell Neapolitanischer traditionell Neapolitanischer Pizza Pasta",
       author: "_id",
       lastEdit: new Date(),
       thumbnail: "https://www.koch-mit.de/app/uploads/2020/02/pizzatitel-300x169.jpg",
@@ -88,7 +90,9 @@ export class RecipePage implements OnInit {
 
   ngOnInit() {
     const oId = this.route.snapshot.paramMap.get("id");
-    console.log(oId);
+    // this.backend.getRecipe(oId).subscribe(recipe => {
+    //   this.recipe = recipe;
+    // });
   }
 
 }

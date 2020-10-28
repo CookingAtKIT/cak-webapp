@@ -6,6 +6,7 @@ export class Recipe {
     author: string;
     lastEdit: Date;
     thumbnail: string;
+    description?: string;
     ingredients: {
         ingredient: {
             displayname:string,
