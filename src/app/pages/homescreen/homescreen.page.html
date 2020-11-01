@@ -41,21 +41,38 @@
     </ion-card>
   </div>-->
 
-  <ion-grid *ngIf="user.loggedIn">
-    <ion-row>
-      <ion-list-header>Suchergebnisse</ion-list-header>
-      <ion-col *ngFor="let res of recommendedRecipes" class="ion-no-padding" size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="2">
-        <ion-card routerLink="/recipe/{{ res.id }}">
-          <ion-img [src]="res.imgsrc" class="card-img"></ion-img>
-          <ion-card-header>
-            <ion-card-subtitle>{{ res.subtitle }}</ion-card-subtitle>
-            <ion-card-title>{{ res.title }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            {{ res.description }}
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <h1 class="ion-padding-start bold" style="padding-bottom: 0; margin-bottom: 0">Beliebt</h1>
+
+  <ion-slides [options]="sliderConfig" style="margin-top: 0">
+    <ion-slide class="max-height" *ngFor="let res of recommendedRecipes">
+      <ion-card routerLink="/recipe/{{ res.id }}">
+        <ion-img [src]="res.imgsrc" class="card-img"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>{{ res.subtitle }}</ion-card-subtitle>
+          <ion-card-title>{{ res.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ res.description }}
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <h1 class="ion-padding-start bold" style="padding-bottom: 0; margin-bottom: 0">Beliebt</h1>
+
+  <ion-slides [options]="sliderConfig" style="margin-top: 0">
+    <ion-slide class="max-height" *ngFor="let res of recommendedRecipes">
+      <ion-card routerLink="/recipe/{{ res.id }}">
+        <ion-img [src]="res.imgsrc" class="card-img"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>{{ res.subtitle }}</ion-card-subtitle>
+          <ion-card-title>{{ res.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ res.description }}
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>

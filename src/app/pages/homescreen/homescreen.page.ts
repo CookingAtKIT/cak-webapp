@@ -46,6 +46,13 @@ export class HomescreenPage implements OnInit {
     ];
   }
 
+  sliderConfig = {
+    spaceBetween: -10,
+    centeredSlides: true,
+    slidesPerView: 1.12,
+    autoHeight: false
+  };
+
   ngOnInit() {
   }
 

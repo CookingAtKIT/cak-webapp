@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {User} from '../classes/user';
-import {Recipe} from '../interfaces/recipe';
+import { User } from '../classes/user';
+import { Recipe } from '../interfaces/recipe';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,6 @@
 {
   "appId": "edu.kit.student.cak",
-  "appName": "Cooking@KIT",
+  "appName": "KITchen",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
